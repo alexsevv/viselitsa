@@ -16,9 +16,9 @@ end
 # gem install unicode_utils . Для нормальной работы в Windows нужно подкючать unicode_utils/downcase
 require "unicode_utils/downcase"
 
-require_relative "game"
-require_relative "result_printer"
-require_relative "word_reader"
+require_relative "lib/game"
+require_relative "lib/result_printer"
+require_relative "lib/word_reader"
 
 puts "Игра виселица.\n\n"
 sleep 1
@@ -27,7 +27,7 @@ printer = ResultPrinter.new
 
 word_reader = WordReader.new
 
-words_file_name = File.dirname(__FILE__) + "/data/words.txt"
+words_file_name = File.dirname(__FILE__) + "/lib/data/words.txt"
 
 # Все изменения логики будут у нас в классе Game.  В одном месте нам нужно
 # преобразовать полученные данные в нижний регистр, используя метод downcase
