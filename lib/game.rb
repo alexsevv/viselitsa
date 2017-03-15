@@ -39,10 +39,10 @@ class Game
 
       @good_letters << bukva
 
-      if bukva == "е" then @good_letters << "ё" end
-      if bukva == "ё" then @good_letters << "е" end
-      if bukva == "и" then @good_letters << "й" end
-      if bukva == "й" then @good_letters << "и" end
+      @good_letters << "ё" if bukva == "е"
+      @good_letters << "е" if bukva == "ё"
+      @good_letters << "й" if bukva == "и"
+      @good_letters << "и" if bukva == "й"
       if (@letters - @good_letters).empty? then @status = 1 end
     else
       @bad_letters << bukva
